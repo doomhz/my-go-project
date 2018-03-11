@@ -1,0 +1,9 @@
+my-go-project:
+  image: golang:1.9.4
+  volumes:
+    - ./:/go
+  working_dir: /go
+  ports:
+    - "6060:6060"
+  environment:
+    - GOPATH=/go
