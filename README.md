@@ -29,3 +29,10 @@ The following dependency error should pop-up:
             /go/src/_/go/src/my-lib/vendor/github.com/go-sql-driver/mysql (from $GOPATH)
 
 Any idea how to fix this? Any help would be much appreciated. Thanks in advance.
+
+Update
+------
+
+The issue is that relative import paths don't work with *dep*: [https://github.com/golang/go/issues/15478](https://github.com/golang/go/issues/15478).
+
+A quick fix is to provide the *main-package/sub-package* path to *import* instead of just *sub-package* as explained here [here](https://github.com/golang/go/issues/15478#issuecomment-215424925).
